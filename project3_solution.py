@@ -1,6 +1,3 @@
-# This serves as a template which will guide you through the implementation of this task.  It is advised
-# to first read the whole template and get a sense of the overall structure of the code before trying to fill in any of the TODO gaps
-# First, we import necessary libraries:
 import numpy as np
 from torchvision import transforms
 from torch.utils.data import DataLoader
@@ -39,7 +36,7 @@ def generate_embeddings():
                               shuffle=False,
                               pin_memory=True, 
                               num_workers=4)
-    # Define a model for extraction of the embeddings (Hint: load a pretrained model, more info here: https://pytorch.org/vision/stable/models.html)
+    # Define a model for extraction of the embeddings
     model = resnext50_32x4d(weights=ResNeXt50_32X4D_Weights.DEFAULT)
 
     embeddings = []
@@ -166,7 +163,7 @@ if __name__ == '__main__':
     # load the training and testing data
     train, X_train, y_train, test = get_data()
 
-    # define a model and train it
+    # define model and train it
     model = create_model()
     model_trained = train_model(X_train, y_train, train, model)
     
